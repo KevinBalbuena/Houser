@@ -1,19 +1,20 @@
 import React from "react";
 import "./App.css";
-import Dashboard from "./Components/Dashboard";
-import House from "./Components/House";
-import Wizard from "./Components/Wizard";
 import Header from "./Components/Header";
+import { HashRouter } from "react-router-dom";
+import routes from "../src/routes";
 
-function App() {
-  return (
-    <div className="App">
-      <Dashboard />
-      <House />
-      <Wizard />
-      <Header />
-    </div>
-  );
+class App extends React.Component {
+  render() {
+    return (
+      <HashRouter>
+        <div className="App">
+          <Header />
+          {routes}
+        </div>
+      </HashRouter>
+    );
+  }
 }
 
 export default App;
